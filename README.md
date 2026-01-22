@@ -49,10 +49,16 @@ CREATE TABLE retail_sales
 - **Null Value Check**: Check for any null values in the dataset and delete records with missing data.
 
 ```sql
-SELECT COUNT(*) FROM retail_sales;
-SELECT COUNT(DISTINCT customer_id) FROM retail_sales;
+---How Many Sales we have.?
+SELECT  COUNT(*) as total_sale from retail_sales
+
+--How many Unique Customers we have
+select count(DISTINCT customer_id) as total_sale from retail_sales
+
+---Identify all unique product categories in the dataset.
 SELECT DISTINCT category FROM retail_sales;
 
+------Data Cleaning
 SELECT * FROM retail_sales
 WHERE 
     sale_date IS NULL OR sale_time IS NULL OR customer_id IS NULL OR 
